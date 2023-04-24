@@ -7,11 +7,21 @@ using UnityEngine.UI;
 public class ChatGptDemo : MonoBehaviour
 {
     public Chat chat;
-    public Text text;
+    
+    public InputField inputField;
+    public DialogBox dialogBox;
 
     private void Start()
     {
-        SingleAskStream("写一首诗吧");
+        AutoHideDialog();
+    }
+
+    public void SetChatAction()
+    {
+        if (inputField == null) return;
+        if (dialogBox == null) return;
+        dialogBox.ShowDialog("酱酱，在思考中。。。。");
+        SingleAskStream(inputField.text);
     }
 
     /// <summary>
@@ -57,10 +67,14 @@ public class ChatGptDemo : MonoBehaviour
     async void SingleAskStream(string message)
     {
         var result = await ChatGpt.SingleAskStream(message, Debug.Log);
-        if (text != null)
-        {
-            text.text = result;
-        }
+        dialogBox.ShowDialog(result);
+        Invoke(nameof(AutoHideDialog),60);
         Debug.Log($"结束了--------{result}");
+    }
+
+    void AutoHideDialog()
+    {
+        if (dialogBox == null) return;
+        dialogBox.HideDialog();
     }
 }
