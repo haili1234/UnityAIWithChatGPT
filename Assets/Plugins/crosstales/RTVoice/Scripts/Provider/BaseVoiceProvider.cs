@@ -356,7 +356,7 @@ namespace Crosstales.RTVoice.Provider
 
                         if (!isNative)
                         {
-                           onSpeakAudioGenerationComplete(wrapper);
+                           onSpeakAudioGenerationComplete(wrapper,ac);
                         }
 
                         if ((isNative || wrapper.SpeakImmediately) && wrapper.Source != null)
@@ -602,12 +602,12 @@ namespace Crosstales.RTVoice.Provider
          if (_onSpeakAudioGenerationStart != null) _onSpeakAudioGenerationStart.Invoke(wrapper);
       }
 
-      protected static void onSpeakAudioGenerationComplete(Model.Wrapper wrapper)
+      protected static void onSpeakAudioGenerationComplete(Model.Wrapper wrapper,AudioClip clip=null)
       {
          if (Util.Config.DEBUG)
             Debug.Log("onSpeakAudioGenerationComplete: " + wrapper);
 
-         if (_onSpeakAudioGenerationComplete != null) _onSpeakAudioGenerationComplete.Invoke(wrapper);
+         if (_onSpeakAudioGenerationComplete != null) _onSpeakAudioGenerationComplete.Invoke(wrapper,clip);
       }
 
       protected static void onErrorInfo(Model.Wrapper wrapper, string info)

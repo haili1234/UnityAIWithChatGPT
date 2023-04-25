@@ -153,7 +153,7 @@ namespace Crosstales.RTVoice.Demo
          Debug.Log("speakAudioGenerationStartMethod: " + wrapper);
       }
 
-      private void speakAudioGenerationCompleteMethod(Model.Wrapper wrapper)
+      private void speakAudioGenerationCompleteMethod(Model.Wrapper wrapper,AudioClip clip)
       {
          Debug.Log("speakAudioGenerationCompleteMethod: " + wrapper);
          currentWrapper = wrapper;

@@ -78,7 +78,7 @@ namespace Crosstales.RTVoice.Demo
 
       #endregion
 
-      private void speakAudioGenerationCompleteMethod(Model.Wrapper wrapper)
+      private void speakAudioGenerationCompleteMethod(Model.Wrapper wrapper,AudioClip clip)
       {
          if (PlayOnStart)
          {

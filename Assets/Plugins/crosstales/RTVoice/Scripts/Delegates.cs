@@ -18,7 +18,7 @@ namespace Crosstales.RTVoice
 
    public delegate void SpeakAudioGenerationStart(Model.Wrapper wrapper);
 
-   public delegate void SpeakAudioGenerationComplete(Model.Wrapper wrapper);
+   public delegate void SpeakAudioGenerationComplete(Model.Wrapper wrapper,AudioClip clip=null);
 
    public delegate void ErrorInfo(Model.Wrapper wrapper, string info);
 

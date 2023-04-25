@@ -9,25 +9,28 @@ using Message = OpenAi.Message;
 public class ChatGptDemo : MonoBehaviour
 {
     public Chat chat;
-    
+
     public InputField inputField;
     public DialogBox dialogBox;
     public SpeechText speechText;
     public AudioSource targetAudioSource;
-    
+
     public void OnEnable()
     {
-        Speaker.OnSpeakStart += onSpeakStart;
+        Speaker.OnSpeakAudioGenerationComplete += onSpeakAudioGenerationComplete;
     }
 
     public void OnDisable()
     {
-        Speaker.OnSpeakStart += onSpeakStart;
+        Speaker.OnSpeakAudioGenerationComplete -= onSpeakAudioGenerationComplete;
     }
-    
-    private void onSpeakStart(Crosstales.RTVoice.Model.Wrapper wrapper)
+
+
+    private void onSpeakAudioGenerationComplete(Crosstales.RTVoice.Model.Wrapper wrapper, AudioClip clip)
     {
-       Debug.Log("AnimeKing 说话："+wrapper);
+        if (targetAudioSource == null) return;
+        targetAudioSource.clip = clip;
+        targetAudioSource.Play();
     }
 
     private void Start()
@@ -91,13 +94,6 @@ public class ChatGptDemo : MonoBehaviour
         {
             speechText.Text = result;
             speechText.Speak(SetAudioSource);
-            if (targetAudioSource != null)
-            {
-               
-               // targetAudioSource.clip = speechText.Voices.Voice;
-               Debug.Log("AnimeKing speechText.Voices.Voice:"+speechText.Voices.Voice);
-               Debug.Log("AnimeKing speechText.Source:"+speechText.Source);
-            }
         }
         //Invoke(nameof(AutoHideDialog),60);
         Debug.Log($"结束了--------{result}");
@@ -105,8 +101,7 @@ public class ChatGptDemo : MonoBehaviour
 
     void SetAudioSource(AudioSource source)
     {
-        Debug.Log("AnimeKing source:"+source);
-        
+        Debug.Log("AnimeKing source:" + source);
     }
 
     void AutoHideDialog()

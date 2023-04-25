@@ -398,7 +398,7 @@ namespace Crosstales.RTVoice.Tool
             Generate();
       }
 
-      private void onSpeakAudioGenerationComplete(Model.Wrapper wrapper)
+      private void onSpeakAudioGenerationComplete(Model.Wrapper wrapper,AudioClip clip)
       {
          lastUid = wrapper.Uid;
 

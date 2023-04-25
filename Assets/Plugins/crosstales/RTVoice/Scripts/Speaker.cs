@@ -2279,9 +2279,9 @@ namespace Crosstales.RTVoice
          if (_onSpeakAudioGenerationStart != null) _onSpeakAudioGenerationStart.Invoke(wrapper);
       }
 
-      private static void onSpeakAudioGenerationComplete(Model.Wrapper wrapper)
+      private static void onSpeakAudioGenerationComplete(Model.Wrapper wrapper,AudioClip clip=null)
       {
-         if (_onSpeakAudioGenerationComplete != null) _onSpeakAudioGenerationComplete.Invoke(wrapper);
+         if (_onSpeakAudioGenerationComplete != null) _onSpeakAudioGenerationComplete.Invoke(wrapper,clip);
       }
 
       private static void onErrorInfo(Model.Wrapper wrapper, string errorInfo)
