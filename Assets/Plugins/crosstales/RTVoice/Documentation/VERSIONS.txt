@@ -1,0 +1,556 @@
+﻿# RT-Voice PRO - Release notes
+
+## 2020.1.2 - 26.03.2020
+* Windows: resilience for buggy voices improved
+* SAPI: integration improved
+* Improvements for macOS and Linux editors
+
+## 2020.1.1 - 05.03.2020
+* Speaker; default of parameter "isFuzzy" changed to false in:
+  * VoiceForCulture
+  * VoicesForCulture
+  * VoiceForGender
+  * VoicesForGender
+* iOS: Silence(uid) works now as expected
+* SAPI Unity: Silence(uid) works now as expected
+* ReminderCheck removed
+* Updated to Common 2020.1.2
+
+## 2020.1.0 - 29.01.2020
+* iOS: library reworked
+* macOS: IL2CPP support
+* eSpeak: IL2CPP support
+* asmdef added
+* Demo: Poems updated for macOS&Linux
+* Editor integration improved
+* Support for Unity 2020
+* Updated to Common 2020.1.1
+
+## 2019.6.5 - 17.12.2019
+* PlayMaker-actions improved
+* Android: Manifest fixed
+* Code improvements
+
+## 2019.6.4 - 05.12.2019
+* Speaker:
+  * "isMuted", "Mute", "UnMute" and "MuteOrUnMute" added
+  * "isPaused" and "PauseOrUnpause" added
+* Providers fixed for special XML characters
+* Azure provider largely improved
+* Android: potential bug in native library fixed
+* Updated to Common 2019.5.4
+
+## 2019.6.3 - 20.11.2019
+* General: fix for "VoiceForName"
+* Updated to Common 2019.5.3
+
+## 2019.6.2 - 10.11.2019
+* General: Improvements for "VoiceForName"
+* WSA: fix for the build pipeline
+* AWS Polly: voices added and improved for 2019+
+* Azure: fix for .NET4x
+* Updated to Common 2019.5.2
+ 
+## 2019.6.1 - 10.10.2019
+* WebGL: fix for builds  
+
+## 2019.6.0 - 06.10.2019
+* Biggest code overhaul since the release 
+* Updated to Common 2019.5.0
+
+## 2019.5.2 - 25.09.2019
+* Fix for macOS
+* Google Cloud provider improved
+* ReminderCheck changed
+* UpdateCheck is now set to "false" per default (enable it in the configuration)
+
+## 2019.5.1 - 23.09.2019
+* Fix for macOS
+* Small improvements
+
+## 2019.5.0 - 11.09.2019
+* New voice provider "Google Cloud" added! See "3rd party"-folder for the integration
+* AWS Polly: Editor improved
+* Azure: Editor improved
+* Editor integration improved
+
+## 2019.4.1 - 05.09.2019
+* eSpeak: pause at the end of the text removed
+* Wrapper: "SpeechTime"-property added
+* Updated to Common 2019.4.1
+
+## 2019.4.0 - 28.07.2019
+* New voice provider "Azure (Bing Speech)" added! See "3rd party"-folder for the integration
+* SALSA-integration updated to version 2.1.0
+* AWS Polly: fix for IL2CPP under Android
+* Updated for Unity 2017.4 and higher
+* Added compatibility with assembly definitions
+* Demos: fully qualified access to classes
+* Updated to Common 2019.4.0
+
+## 2019.3.1 - 27.05.2019
+* Linux: problems under non-Windows platforms solved
+* Rare problems with loading a corrupted configuration fixed
+* Updated to Common 2019.3.2
+
+## 2019.3.0 - 08.05.2019
+* New voice provider "WebGL" added! See "3rd party"-folder for the integration
+* Windows: voice selection fixed
+* Pattern matching for cultures simplified. E.g. "en US", "enus", "en-us" and "en_us" is now working.
+* PlayMaker actions "GetVoices" and "GetCultures" added
+* Updated to Common 2019.3.1
+
+## 2019.2.3 - 19.04.2019
+* "Enforce Standalone TTS" for development in the configuration added (e.g. for mobile)
+* Fixes for iOS, Android and WSA build platforms
+* Better Editor handling
+* Tested with Unity 2019.1.0
+* Updated to Common 2019.3.0
+
+## 2019.2.2 - 11.04.2019
+* Fix: Build platforms other than Windows failed in 2019.2.1
+* Updated to Common 2019.2.6
+
+## 2019.2.1 - 05.04.2019
+* Windows: Native and eSpeak voice providers are now working under IL2CPP!
+* New voice provider "SAPI Unity" added! See "3rd party"-folder for the integration
+* WSA: code improved and native mode added (when built as XAML without IL2CPP)
+* AWS Polly: "Auto Breath" added
+* Speaker: OnApplicationFocus now pauses and unpauses per default
+* Speaker and Provider: "isWorkingInPlaymode" and "isIL2CPPSupported" added
+* Voice: Version added
+* Editor improved
+* Updated to Common 2019.2.5
+
+## 2019.2.0 - 12.03.2019
+* New voice provider "Klattersynth" added! See "3rd party"-folder for the integration
+* Speaker: "isOnlineService" and "hasCoRoutines" added
+* Provider: "isOnlineService" and "hasCoRoutines" added
+* AudioFileGenerator: callback "OnParalanguageStart" and "OnParalanguageComplete" added
+* Paralanguage: callback "OnParalanguageStart" and "OnParalanguageComplete" added
+* SpeechText: callback "OnSpeechTextStart" and "OnSpeechTextComplete" added
+* PlayMaker actions added:
+   * AudioFileGenerator
+   * Paralanguage
+   * SpeechText
+   * TextFileSpeaker
+* Updated to Common 2019.2.3
+
+## 2019.1.3 - 11.02.2019
+* eSpeak-NG support added
+* eSpeak: added data path (can now be bundled with Unity)
+* Warning added if build target is standalone with IL2CPP
+* Code cleanup
+
+## 2019.1.2 - 07.02.2019
+* Windows:
+   * fix for built-in provider when voice is null
+   * detection of "modern Spanish" added
+* Updated to Common 2019.2.1
+
+## 2019.1.1 - 28.01.2019
+* "Unity Standard Assets" removed
+* UWP (WSA) provider improved
+* Minor code improvements
+
+## 2019.1.0 - 14.01.2019
+* Windows: new DLL-integrated wrapper added (use "Windows Legacy" to use the old wrapper)
+* Provider:
+   * isSpeakNativeSupported added
+   * isSpeakSupported added
+   * isPlatformSupported added
+   * isSSMLSupported added
+* Speaker: 
+   * isSpeakNativeSupported added
+   * isSpeakSupported added
+   * isPlatformSupported added
+   * isSSMLSupported added
+   * BusyCount and isBusy added
+* Updated to Common 2019.1.0
+
+## 2018.4.0 - 01.11.2018
+* Windows: Wrapper improved to become faster
+* macOS: voices correctly set 
+* Amplitude-demo added
+* SALSA-demos improved
+* Updated to Common 2018.4.0
+
+## 2018.3.1 - 18.10.2018
+* New voice provider AWS Polly added! See "3rd party"-folder for the integration
+* Removed false-positives for AV-scanners under Windows (issues with the deployment on "Steam" caused by Trend Micro)
+* Fixes for WSA
+* Speaker: 
+   * SpeakNative: "O"nSpeakComplete" is only called if the speech was successful
+   * "DeleteAudioFiles"-method added
+* Memory-leak from AudioClips fixed
+* Demo scenes improved
+* 3rd party:
+   * Adventure Creator-version updated to 1.65.1
+   * LDC-version updated to 5.0
+   * SALSA-version updated to 1.5.5
+   * SLATE-version updated to 1.8.2
+* Updated to Common 2018.3.1
+
+## 2018.3.0 - 09.10.2018
+* Android: storage-permission removed
+* Speaker: 
+   * "Pause" and "UnPause" added
+   * "SpeechCount" added
+   * "Reset"-method added
+* Windows:
+   * fix for prepare voices
+   * SSML for apostrophes improved 
+* WWW replaced with UnityWebRequest
+* Speaker: ensure name is optional (see "Config")
+* Editor integration improved
+* UpdateCheck: runs in a separate thread
+* Minimum Unity version is now 5.6
+* Common 2018.3.0 added
+* Tested with Unity 2018.3
+
+## 2018.2.0 - 24.08.2018
+* Speaker:
+   * Custom provider added (but not officially accessible)
+   * "areVoicesReady" added
+   * "OnSpeakAudioGenerationComplete" fixed (was always called after the speech)
+   * "ForceSSML" added
+   * "isVoiceForNameAvailable" and VoiceForName have a new parameter "isExact"
+* TextFileSpeaker: Next, Previous, SpeakAll and StopAll added
+* Paralanguage added
+* BaseCustomVoiceProvider added (for an example see "VoiceProviderExample")
+* WavMaster added
+* Wrapper: ForceSSML added
+* iOS: Voice match by id instead of name
+* Windows: SSML improved
+* WebGL: compatible with "Amplitude" => lip-sync in the browser
+* Large refactorings to improve all providers
+* Processes and error messages improved
+* Common 2018.2.0 added
+* Discord channel added
+* Standard version removed
+
+## 2.9.8 - 05.06.2018
+* WSA:
+   * SSML support added
+   * pitch added
+   * rate added
+   * volume added
+* Speaker: added parameter "isFuzzy" to all VoicesForXY-methods
+* VoiceAlias improved
+* Demo scenes improved (gender added)
+* Editor integration improved
+* Android: gender matching added
+* Windows: SSML improved
+* Official support for Unity 2018.1 & 2018.2
+
+## 2.9.7 - 04.04.2018
+* Fix for MaryTTS (was always disabled in play-mode)
+* New class "ChangeGender.cs" added (useful for eSpeak)
+* Gender-mapping for:
+   * iOS (11.0)
+   * macOS (10.13)
+   * WSA (UWP)
+* Speaker: "VoicesForGender" and "VoiceForGender" added
+* eSpeak integration improved - now are all modifiers (m1-m6, f1-f4, croak, whisper) available!
+
+## 2.9.6 - 25.03.2018
+* Provider for Linux added (works also on Windows and macOS, see option "eSpeak" in Speaker)!
+* Delegates moved to own class "Delegates.cs"
+* Providers implement now the interface "IVoiceProvider.cs"
+* Voice: Gender is now an enum
+* VoiceAlias added
+* Speaker: Streamed and Compressed added for AudioClips
+
+## 2.9.5 - 21.02.2018
+* Windows and macOS: Processes fixed (exit condition)
+* Common 1.2.5 added
+
+## 2.9.4 - 08.12.2018
+* Latency of the Speak-call reduced
+* Common 1.2.0 added
+
+## 2.9.3 - 22.12.2017
+* Asset moved to "Plugins"
+* Windows and macOS provider improved
+* AudioFileGenerator: output sample rate, bits and channels added for Windows
+* VoiceProviderMary: Text type added
+* UpdateCheck improved
+* NYCheck added
+* Code cleanup
+
+## 2.9.2 - 04.12.2017
+* "Dont Destroy" added to Speaker
+* BaseVoiceProvider and VoiceProviderWindows: "SpeakNative" improved
+* Silence on focus lost added
+* EditorConfig improved
+* Improved for Unity 2017.3
+* Support for pre Unity 5.3 dropped
+
+## 2.9.1 - 23.11.2017
+* Windows and maOS provider fixed for WSA
+* Locate of the assets improved
+
+## 2.9.0 - 18.11.2017
+* Compile define symbol "CT_RTV" added
+* id file added
+* Windows and macOS: now fully multi-threaded & better performance
+* Android and WSA: GC allocs minimized
+* Asset path in Editor removed, locate it automatically!
+* General code improvements
+
+## 2.8.6 - 17.10.2017
+* VoiceInitalizer added
+* Android: pre-caching of voices disabled
+* iOS: Bridge improved
+* SALSA: 2D-demo scene added
+* PlayMaker: missing platforms added
+* Speaker:
+   * isVoiceForCultureAvailable added
+   * isVoiceForNameAvailable added
+   * VoiceForCulture has now a third parameter called "fallbackCulture"
+* Editor scripts better organized
+* Updated for Unity 2017.3
+
+## 2.8.5 - 18.09.2017
+* Editor improved
+* Windows: Wrappers fixed to work again with all SAPI5 voices
+* Documentation improved
+
+## 2.8.4 - 03.09.2017
+* PlayMaker-actions improved
+* Speaker: isSpeaking added
+* ConfigLoader added
+* Show configuration on the first launch
+* Updated for Unity 2017.2
+
+## 2.8.3 - 24.08.2017
+* WSA: IL2CPP fixed
+* WSA: Support for version 8.0 and 8.1 removed
+* Windows: Wrappers improved
+* Videos updated
+
+## 2.8.2 - 15.08.2017
+* WSA: path problems fixed
+* Providers improved
+* GAApi added
+* General code improvements
+
+## 2.8.1 - 24.07.2017
+* MaryTTS: RAWMARYXML, EmotionML and SSML added!
+* MaryTTS: Rate and pitch added
+* MaryTTS: provider works now without a given voice
+* MaryTTS: proper URI-encoding added
+* Windows: SSML added!
+* Windows: Pitch added
+* AudioFileGenerator: Prefab and demo scene added
+* Helper.cs: ClearTags added
+* Speaker.cs: order of the arguments switched (volume <=> pitch)
+* LiveSpeaker.cs: order of the arguments switched (volume <=> pitch)
+* Tutorial for SSML and EmotionML added
+* Poem.txt added
+* Official support for Unity 2017
+
+## 2.8.0 - 07.07.2017
+* Demo scenes improved
+* Android: automatically set the correct API-level
+* iOS: legacy code for pre-iOS 8 removed. Now are all voices selectable.
+* iOS: automatically set the correct target SDK
+* iOS: speech rate fixed
+* MaryTTS: HTTP-auth added
+* Callbacks: EventArgs removed and replaced by parameters (like the "Wrapper" etc.)
+* Speaker: Speak-parameters changed (switched the positions of "outputFile" and "pitch")
+* New callback "OnVoicesReady" added
+* DLL removed (only source code)
+* EXEs and DLLs are now signed
+* Documentation for MaryTTS-server with HTTPS added (for WebGL)
+* Small fixes
+
+## 2.7.4 - 20.06.2017
+* SetupResources.cs improved
+
+## 2.7.3 - 02.06.2017
+* Internet check improved
+* Update check improved
+* Reminder added
+* Configuration window and menu "Tools" improved:
+   * Videos added (incl. promo and tutorials)
+   * README added
+   * VERSIONS added
+   * Social-media buttons added
+
+## 2.7.2 - 19.05.2017
+* Events changed:
+   * OnErrorInfo
+   * OnSpeakCurrentWord
+   * OnSpeakCurrentPhoneme
+   * OnSpeakCurrentViseme
+* Internet availability check added
+* Use of "System.Guid" reduced
+* TTS-Killtime changed from 5000 to 3000
+* Wrapper: "Created" added
+* New EXE"s for Windows
+* Fix for WSA (UWP) builds
+* Tested with Unity 2017
+* Code-cleanup
+
+## 2.7.1 - 10.04.2017
+* Support for HTTPS added
+* Editor: scroll views added
+* Context-menu for hierarchy added
+* Editor-components improved
+* API-template improved
+* Demo scenes updated
+* Proxy added
+
+## 2.7.0 - 09.03.2017
+* MaryTTS implemented
+* Support for WSA 8.0 and 8.1 added
+* File-operations improvement
+* Events are simplified - parameter "sender" was removed
+* Code improvements
+
+## 2.6.2 - 27.01.2017
+* DLL fixed for IL2CPP
+
+## 2.6.1 - 11.01.2017
+* Stub for UWP (WSA) fixed
+
+## 2.6.0 - 09.01.2017
+* UWP (WSA) support added!
+* Speaker events "OnSpeakNativeStart" and "OnSpeakNativeComplete" removed: use "OnSpeakStart" and "OnSpeakComplete" instead
+* Android: fix for getting the voices on various devices
+* Windows: special character (UTF8) support for voices
+* Support for Unity 5.6 added
+* TextFileSpeaker improved
+* Sources are inside the "Sources.unitypackage"
+* Minor code improvements
+
+## 2.5.2 - 27.10.2016
+* TextFileSpeaker added
+* DontDestroyOnLoad is now configurable in the settings (currently hidden)
+* The Windows-TTS-Wrapper is now configurable in the settings (currently hidden)
+* The macOS-TTS-command is now configurable in the settings (currently hidden)
+* Settings are managed via CTPlayerPrefs
+* Default as DLL (sources are inside the "sources.zip")
+* Code clean-up
+
+## 2.5.1 - 21.09.2016
+* PlayMaker actions improved
+* 32bit-mode for Windows changed
+* Unity 5.5-ready
+
+## 2.5.0 - 13.09.2016
+* Android support added!
+* iOS support added!
+* Support for 32-Bit Windows system voices
+* Pitch added
+* Namespaces extended
+* Code improvements
+
+## 2.4.4 - 28.02.2016
+* VoiceProvider Speak() improved
+* Demo for "NPC Chat" added (see folder "3rd party")
+* Code improvements
+
+## 2.4.3 - 15.07.2016
+* Editor integration improved
+* Rename of all events to OnXY
+* Marginal code changes
+
+## 2.4.2 - 11.07.2016
+* 3rd party support (AC, UDEA and PlayMaker) improved
+* New method to approximate the length of a speech: Speaker.ApproximateSpeechLength()
+* Test-Drive added to the configuration window
+* Callbacks are now on the Speaker-class
+* Error-callback "ErrorInfoEvent" added
+* Documentation improved
+
+## 2.4.1 - 05.07.2016
+* Configuration window and "Unity Preferences" added
+
+## 2.4.0 - 30.06.2016
+* SpeechText added
+* LiveSpeaker improved
+* Automatically adds the necessary RTVoice-prefabs to the current scene
+* Update-checker added
+* PlayMaker actions improved
+* RTVoiceTTSWrapper.exe rebuild (is now "AnyCPU" instead of "x86") and malware report from [Metadefender](https://www.metadefender.com/) added
+* VoiceProvider is now platform independent
+* Demo for "Adventure Creator" added (see folder "3rd party")
+* Demo for "Cinema Director" added (see folder "3rd party")
+* Demo for "Dialogue System" added (see folder "3rd party")
+* Demo for "LDC" added (see folder "3rd party")
+* Demo for "LipSync" added (see folder "3rd party")
+* Demo for "SLATE" added (see folder "3rd party")
+* Demo for "THE Dialogue Engine" added (see folder "3rd party")
+* Code improvements
+* Documentation updated (section "Additional voices")
+* Minimal Unity version is now 5.2.1
+
+## 2.3.1 - 10.06.2016
+* Code clean-up
+
+## 2.3.0 - 31.05.2016
+* Generated audio can now be stored on a desired file path (see Wrapper-class -> "OutputFile")
+* Loudspeaker added: use 1-n synchronized loudspeakers for a single AudioSource origin.
+* The Silence()-method works now with provided AudioSources
+* Correct handling of AudioSource.Pause() and AudioSource.UnPause()
+* SALSA-demo added (see folder "3rd party")
+* Code improvements
+
+## 2.2.1 - 17.05.2016
+* PlayMaker actions improved
+
+## 2.2.0 - 26.04.2016
+* PlayMaker actions added
+
+## 2.1.2 - 12.04.2016
+* Demo scenes improved
+* Windows provider improved
+
+## 2.1.1 - 04.04.2016
+* Multi-threading improved
+* Demo scenes improved
+* New callbacks added
+
+## 2.1.0 - 24.03.2016
+* Sequencer added
+* Demo scenes improved (with many 3D audio examples)
+* Multi-threading added
+* Better Unity Editor integration
+* ExecuteInEditMode removed
+* Timing for callbacks improved
+
+## 2.0.0 - 22.02.2016
+* Various callbacks added
+* Added visemes and phomenes on Windows
+* Rate and volume control added
+* Code clean-up
+
+## 1.4.1 - 11.11.2015
+* Exit-handling of processes improved
+
+## 1.4.0 - 22.10.2015
+* PRO edition created
+* Obsolete-warning for Unity 5.2 and above removed
+
+## 1.3.0 - 20.09.2015
+* Windows-Wrapper improved
+
+## 1.2.1 - 28.08.2015
+* Bug on OSX fixed
+
+## 1.2.0 - 22.08.2015
+* Support for Localized Dialogs & Cutscenes (LDC) added
+* Support for Dialogue System for Unity added
+* Support for THE Dialogue Engine added
+* Wrappers for MonoBehaviour added (like "SendMessage")
+
+## 1.1.1 - 12.08.2015
+* Minor code improvements
+
+## 1.1.0 - 07.08.2015
+* Direct Unity-support added (thanks to "Crazy Minnow Studio" for their valuable suggestions)
+
+## 1.0.0 - 20.07.2015
+* Production release

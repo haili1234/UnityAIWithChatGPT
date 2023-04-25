@@ -1,0 +1,103 @@
+﻿# RT-Voice PRO - SSML
+
+Works with Windows, WSA (UWP), MaryTTS, eSpeak, AWS Polly, Azure and Google Cloud.
+
+
+## Examples
+
+### Changing Voices
+This is the default voice. <voice name="Microsoft David Desktop">This is David.</voice> This is the default again. <voice name="Microsoft Zira Desktop">Zira here.</voice>
+This is the default voice. <voice name="cmu-bdl-hsmm">This is cmu-bdl-hsmm.</voice> This is the default again. <voice name="dfki-spike-hsmm">dfki-spike-hsmm here.</voice>
+
+
+### Inserting silence / pauses (not working in MaryTTS 5.2)
+This is not <break strength="none" /> a pause.
+This is a <break strength="x-weak" /> phrase break.
+This is a <break strength="weak" /> phrase break.
+This is a <break strength="medium" /> sentence break.
+This is a <break strength="strong" /> paragraph break.
+This is a <break strength="x-strong" /> paragraph break.
+This is a <break time="3s" /> three second pause.
+This is a <break time="4500ms" /> 4.5 second pause.
+This is a <break /> sentence break
+
+
+### Adjusting Speech Rate
+I am now <prosody rate="x-slow">speaking at half speed.</prosody>
+I am now <prosody rate="slow">speaking at 2/3 speed.</prosody>
+I am now <prosody rate="medium">speaking at normal speed.</prosody>
+I am now <prosody rate="fast">speaking 33% faster.</prosody>
+I am now <prosody rate="x-fast">speaking twice as fast</prosody>
+I am now <prosody rate="default">speaking at normal speed.</prosody>
+I am now <prosody rate=".42">speaking at 42% of normal speed.</prosody>
+I am now <prosody rate="2.8">speaking 2.8 times as fast</prosody>
+I am now <prosody rate="-0.3">speaking 30% more slowly.</prosody>
+I am now <prosody rate="+0.3">speaking 30% faster.</prosody>
+
+
+### Adjusting Voice Pitch
+<prosody pitch="x-low">This is half-pitch</prosody>
+<prosody pitch="low">This is 3/4 pitch.</prosody>
+<prosody pitch="medium">This is normal pitch.</prosody>
+<prosody pitch="high">This is twice as high.</prosody>
+<prosody pitch="x-high">This is three times as high.</prosody>
+<prosody pitch="default">This is normal pitch.</prosody>
+<prosody pitch="-50%">This is 50% lower.</prosody>
+<prosody pitch="+50%">This is 50% higher.</prosody>
+<prosody pitch="-6st">This is six semitones lower.</prosody>
+<prosody pitch="+6st">This is six semitones higher.</prosody>
+<prosody pitch="-25Hz">This has a pitch mean 25 Hertz lower.</prosody>
+<prosody pitch="+25Hz">This has a pitch mean 25 Hertz higher.</prosody>
+<prosody pitch="75Hz">This has a pitch mean of 75 Hertz.</prosody>
+
+
+### Adjusting Output Volume (no effect in MaryTTS 5.2)
+<prosody volume="silent">This is silent.</prosody>
+<prosody volume="x-soft">This is 25% as loud.</prosody>
+<prosody volume="soft">This is 50% as loud.</prosody>
+<prosody volume="medium">This is the default volume.</prosody>
+<prosody volume="loud">This is 50% louder.</prosody>
+<prosody volume="x-loud">This is 100% louder.</prosody>
+<prosody volume="default">This is the default volume.</prosody>
+<prosody volume="-33%">This is 33% softer.</prosody>
+<prosody volume="+33%">This is 33% louder.</prosody>
+<prosody volume="33%">This is 33% louder.</prosody>
+<prosody volume="33">This is 33% of normal volume.</prosody>
+
+
+### Adding Emphasis to Speech (no effect in MaryTTS 5.2)
+This is <emphasis level="strong">stronger</emphasis> than the rest.
+This is <emphasis level="moderate">slightly stronger</emphasis> than the rest.
+This is <emphasis level="none">the same as</emphasis> than the rest.
+
+
+### Shaping intonation contour (seems not to work in Windows)
+<prosody contour="(0%,+20%) (40%,+40%) (60%,+60%) (80%,+80%) (100%,+100%)">I am talking with rising intonation.</prosody>
+<prosody contour="(0%,-20%) (40%,-40%) (60%,-60%) (80%,-80%) (100%,-100%)">I am talking with falling intonation.</prosody>
+<prosody contour="(0%,+20Hz) (10%,+30%) (40%,+10Hz)">good morning</prosody>
+
+
+### Say-as example (partially working in MaryTTS)
+Your reservation for <say-as interpret-as="cardinal"> 2 </say-as> rooms on
+the <say-as interpret-as="ordinal"> 4th </say-as> floor of the hotel on
+<say-as interpret-as="date" format="mdy"> 3/21/2012 </say-as>, with early
+arrival at <say-as interpret-as="time" format="hms12"> 12:35pm </say-as>
+has been confirmed. Please call <say-as interpret-as="telephone" format="1">
+(888) 555-1212 </say-as> with any questions.
+
+
+### Control the rhythm of speech output
+The rental car you reserved <break strength="medium" /> a mid-size sedan
+<break strength="medium" /> will be ready for you to pick up at <break
+time="500ms" /> <say-as interpret-as="hms12"> 4:00pm </say-as> today.
+
+
+### Adding audio (e.g. for paralanguage, only Windows and WSA (UWP))
+<audio src="https://www.crosstales.com/media/rtvoice/Miau.wav"/>is the sound of a cat.
+<audio src="https://www.crosstales.com/media/rtvoice/Ouch.wav"/>I hit my thumb!
+
+
+
+## More information
+* [SSML](https://www.w3.org/TR/speech-synthesis/)
+* [Reference MS](https://docs.microsoft.com/en-us/cortana/reference/ssml)

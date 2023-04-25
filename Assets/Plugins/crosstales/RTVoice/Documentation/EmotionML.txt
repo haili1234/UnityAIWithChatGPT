@@ -1,0 +1,27 @@
+﻿# RT-Voice PRO - EmotionML
+
+Works with MaryTTS.
+
+
+## Examples
+<emotion dimension-set="http://www.w3.org/TR/emotion-voc/xml#pad-dimensions">
+You can use the SSML prosody element to modify the the speech output of a voice. The SSML definition for the prososdy element specifies attributes for pitch, rate, volume, contour, range, and duration.
+    <dimension name="arousal" value="0.3"/><!-- lower-than-average arousal -->
+    <dimension name="pleasure" value="0.9"/><!-- very high positive valence -->
+    <dimension name="dominance" value="0.8"/><!-- relatively high potency    -->
+</emotion>
+
+<emotion>
+    <category name="happiness"/>
+    EmotionML markup explicitly refers to one or more separate vocabularies used for representing emotion-related states.
+</emotion>
+
+<emotion category-set="http://www.w3.org/TR/emotion-voc/xml#everyday-categories">
+    <category name="relaxed"/>
+    EmotionML markup explicitly refers to one or more separate vocabularies used for representing emotion-related states.
+</emotion>
+
+
+## More information
+* [EmotionML](https://www.w3.org/TR/emotionml/)
+* [EmotionML - Emotions](https://www.w3.org/TR/emotion-voc/)

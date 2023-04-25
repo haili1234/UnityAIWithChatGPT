@@ -1,8 +1,10 @@
-using System;
+using Crosstales.RTVoice;
+using Crosstales.RTVoice.Tool;
 using OpenAi;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Message = OpenAi.Message;
 
 public class ChatGptDemo : MonoBehaviour
 {
@@ -10,6 +12,23 @@ public class ChatGptDemo : MonoBehaviour
     
     public InputField inputField;
     public DialogBox dialogBox;
+    public SpeechText speechText;
+    public AudioSource targetAudioSource;
+    
+    public void OnEnable()
+    {
+        Speaker.OnSpeakStart += onSpeakStart;
+    }
+
+    public void OnDisable()
+    {
+        Speaker.OnSpeakStart += onSpeakStart;
+    }
+    
+    private void onSpeakStart(Crosstales.RTVoice.Model.Wrapper wrapper)
+    {
+       Debug.Log("AnimeKing 说话："+wrapper);
+    }
 
     private void Start()
     {
@@ -68,8 +87,26 @@ public class ChatGptDemo : MonoBehaviour
     {
         var result = await ChatGpt.SingleAskStream(message, Debug.Log);
         dialogBox.ShowDialog(result);
-        Invoke(nameof(AutoHideDialog),60);
+        if (speechText != null)
+        {
+            speechText.Text = result;
+            speechText.Speak(SetAudioSource);
+            if (targetAudioSource != null)
+            {
+               
+               // targetAudioSource.clip = speechText.Voices.Voice;
+               Debug.Log("AnimeKing speechText.Voices.Voice:"+speechText.Voices.Voice);
+               Debug.Log("AnimeKing speechText.Source:"+speechText.Source);
+            }
+        }
+        //Invoke(nameof(AutoHideDialog),60);
         Debug.Log($"结束了--------{result}");
+    }
+
+    void SetAudioSource(AudioSource source)
+    {
+        Debug.Log("AnimeKing source:"+source);
+        
     }
 
     void AutoHideDialog()

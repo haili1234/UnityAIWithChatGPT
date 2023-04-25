@@ -9,7 +9,7 @@ namespace OpenAi
 {
     public class ChatGpt
     {
-        public const string ApiKey = "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";
+        public const string ApiKey = "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";
        
         static async Task GetAwaiter(AsyncOperation asyncOperation)
         {
