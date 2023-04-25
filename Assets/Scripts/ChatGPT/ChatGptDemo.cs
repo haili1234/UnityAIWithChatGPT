@@ -1,7 +1,6 @@
 using Crosstales.RTVoice;
 using Crosstales.RTVoice.Tool;
 using OpenAi;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 using Message = OpenAi.Message;
@@ -17,16 +16,16 @@ public class ChatGptDemo : MonoBehaviour
 
     public void OnEnable()
     {
-        Speaker.OnSpeakAudioGenerationComplete += onSpeakAudioGenerationComplete;
+        Speaker.OnSpeakAudioGenerationComplete += OnSpeakAudioGenerationComplete;
     }
 
     public void OnDisable()
     {
-        Speaker.OnSpeakAudioGenerationComplete -= onSpeakAudioGenerationComplete;
+        Speaker.OnSpeakAudioGenerationComplete -= OnSpeakAudioGenerationComplete;
     }
 
 
-    private void onSpeakAudioGenerationComplete(Crosstales.RTVoice.Model.Wrapper wrapper, AudioClip clip)
+    private void OnSpeakAudioGenerationComplete(Crosstales.RTVoice.Model.Wrapper wrapper, AudioClip clip)
     {
         if (targetAudioSource == null) return;
         targetAudioSource.clip = clip;
